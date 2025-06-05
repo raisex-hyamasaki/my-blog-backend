@@ -21,7 +21,7 @@ export default [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['https://blog.raisex.jp'], // ← 重要：明示的に許可
+      origin: ['https://my-blog-two-smoky.vercel.app'], // ← 重要：明示的に許可
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     },

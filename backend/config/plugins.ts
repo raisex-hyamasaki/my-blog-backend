@@ -1,3 +1,6 @@
+// backend\config\plugins.ts
+const frontend = env('FRONTEND_URL', 'http://localhost:3000');
+
 module.exports = ({ env }) => ({
   i18n: true,
   'strapi-plugin-ja-pack': {
@@ -9,14 +12,15 @@ module.exports = ({ env }) => ({
         {
           uid: 'api::article.article',
           draft: {
-            url: 'http://localhost:3000/api/preview?type=article&slug={slug}'
+            url: `${frontend}/api/preview?type=article&slug={slug}`
           },
           published: {
-            url: 'http://localhost:3000/articles/{slug}'
+            url: `${frontend}/articles/{slug}`
           }
         }
       ]
     }
   }
 });
+
 
